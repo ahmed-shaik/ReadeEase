@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="IT/style.css">
+  <title>Search</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Search For A Book</h1>
+    <div class="search">
+      <button id="search-btn" class="search-btn">
+        <i class="fa fa-search fa-2x"></i>
+      </button>
+  
+      <div id="search-bar" class="search-bar">
+        <input type="text" id="search" placeholder="Search books...">
+      </div>
+    <div id="bookList" class="book-list"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const booksData = [
+      {
+  title: "Higher Engineering Mathematics",
+  author: "B S Grewal",
+  year: 2000,
+  quantity: 46,
+  imageUrl: "IT\/img\/1.jpg"
+ },
+ {
+  title: "Information Technology",
+  author: "Dennis P.Curtlin",
+  year: 1999,
+  quantity: 22,
+  imageUrl: "IT\/img\/2.jpg"
+ },
+ {
+  title: "Engineering Mathematics-I",
+  author: "Lajpat Rai",
+  year: 1999,
+  quantity: 40,
+  imageUrl: "IT\/img\/3.jpg"
+ },
+ {
+  title: "Engineering Drawing",
+  author: "N D bhatt",
+  year: 2000,
+  quantity: 21,
+  imageUrl: "IT\/img\/4.jpg"
+ },
+ {
+  title: "Introduction to Microprocessors",
+  author: "Aditya P Mathur",
+  year: 1989,
+  quantity: 14,
+  imageUrl: "IT\/img\/5.jpg"
+ },
+ {
+  title: "Discrete Mathematical Structures",
+  author: "Jean-Paul,Tremblay",
+  year: 1997,
+  quantity: 14,
+  imageUrl: "IT\/img\/6.jpg"
+ },
+ {
+  title: "Programmin With Java",
+  author: "E.Balaguruswamy",
+  year: 1998,
+  quantity: 22,
+  imageUrl: "IT\/img\/7.jpg"
+ },
+ {
+  title: "Engineering mathematics-III",
+  author: "Lajpat Rai",
+  year: 2000,
+  quantity: 8,
+  imageUrl: "IT\/img\/8.jpg"
+ },
+ {
+  title: "Digital Logic and Computer Design",
+  author: "M.Morris Mano",
+  year: 2001,
+  quantity: 10,
+  imageUrl: "IT\/img\/9.jpg"
+ },
+ {
+  title: "Operating Systems",
+  author: "William Stallings",
+  year: 2001,
+  quantity: 10,
+  imageUrl: "IT\/img\/10.jpg"
+ },
+ {
+  title: "The C Programming Language",
+  author: "Brain W Kernighanrnighan,Dennis M Ritchie",
+  year: 2001,
+  quantity: 12,
+  imageUrl: "IT\/img\/11.jpg"
+ },
+ {
+  title: "Programming in ANSII c",
+  author: "E.Balaguruswamy",
+  year: 1989,
+  quantity: 18,
+  imageUrl: "IT\/img\/12.jpg"
+ },
+ {
+  title: "Advanced Engineering Mathematics",
+  author: "Erwin Kreyszig",
+  year: 1999,
+  quantity: 10,
+  imageUrl: "IT\/img\/13.jpg"
+ },
+ {
+  title: "Probability and statistics for Engineers",
+  author: "C R S.Muller",
+  year: 1995,
+  quantity: 12,
+  imageUrl: "IT\/img\/14.jpg"
+ },
+ {
+  title: "Object Oriented in C++ Programming",
+  author: "NabaJyoti,Barkakati",
+  year: 2001,
+  quantity: 6,
+  imageUrl: "IT\/img\/15.jpg"
+ },
+ {
+  title: "Disrtibute Database principles and Systems",
+  author: "Stefano Ceri",
+  year: 1985,
+  quantity: 5,
+  imageUrl: "IT\/img\/16.jpg"
+ },
+ {
+  title: "Systems Programming Operating Systems",
+  author: "D M.Dhamdhere",
+  year: 1996,
+  quantity: 7,
+  imageUrl: "IT\/img\/17.jpg"
+ },
+ {
+  title: "Computer Organization",
+  author: "V Carl Hamacher",
+  year: 1996,
+  quantity: 4,
+  imageUrl: "IT\/img\/18.jpg"
+ },
+ {
+  title: "The UNIX Programming of India",
+  author: "W Kernighan",
+  year: 2000,
+  quantity: 7,
+  imageUrl: "IT\/img\/19.jpg"
+ },
+ {
+  title: "Operating Systems",
+  author: "Charles Chrowly",
+  year: 1998,
+  quantity: 7,
+  imageUrl: "IT\/img\/20.jpg"
+ },
+ {
+  title: "Data Communications and Networking",
+  author: "Behrouz A Forouzan",
+  year: 2000,
+  quantity: 5,
+  imageUrl: "IT\/img\/21.jpg"
+ },
+ {
+  title: "Database Management Systems",
+  author: "Raghu Ramakrishnan",
+  year: 2000,
+  quantity: 6,
+  imageUrl: "IT\/img\/22.jpg"
+ },
+ {
+  title: "computer Networks",
+  author: "Andrew S Tanenbaum",
+  year: 2000,
+  quantity: 11,
+  imageUrl: "IT\/img\/23.jpg"
+ },
+ {
+  title: "C++ An Introduction Programming",
+  author: "Jesse,Liberty",
+  year: 1999,
+  quantity: 4,
+  imageUrl: "IT\/img\/24.jpg"
+ },
+ {
+  title: "Engineering Mathematics",
+  author: "S S.Sastry",
+  year: 2001,
+  quantity: 4,
+  imageUrl: "IT\/img\/25.jpg"
+ },
+ {
+  title: "computer Networks",
+  author: "Uysless,Black",
+  year: 2000,
+  quantity: 6,
+  imageUrl: "IT\/img\/26.jpg"
+ },
+ {
+  title: "Using Information Technology",
+  author: "Brain K,Williams",
+  year: 1999,
+  quantity: 7,
+  imageUrl: "IT\/img\/27.jpg"
+ },
+ {
+  title: "Computers and Technology Information",
+  author: "E G.Rajan",
+  year: 2000,
+  quantity: 7,
+  imageUrl: "IT\/img\/28.jpg"
+ },
+ {
+  title: "Engineering Mathematics",
+  author: "S K V S.Ramachary",
+  year: 2000,
+  quantity: 4,
+  imageUrl: "IT\/img\/29.jpg"
+ },
+ {
+  title: "Programming With C",
+  author: "K R.Venugopal",
+  year: 1997,
+  quantity: 3,
+  imageUrl: "IT\/img\/30.jpg"
+ },
+ {
+  title: "Physics for Engineers",
+  author: "M R.Srinivasan",
+  year: 1996,
+  quantity: 3,
+  imageUrl: "IT\/img\/31.jpg"
+ },
+ {
+  title: "Discrete Mathematical Structures",
+  author: "Bernard,Kolman lman",
+  year: 2000,
+  quantity: 2,
+  imageUrl: "IT\/img\/32.jpg"
+ },
+ {
+  title: "Ordinary and Partial differnitial Equations",
+  author: "M D.Raisinghania",
+  year: 2001,
+  quantity: 2,
+  imageUrl: "IT\/img\/33.jpg"
+ },
+ {
+  title: "Numerical Methods in Enginering and Science",
+  author: "B S.Grewal",
+  year: 1999,
+  quantity: 4,
+  imageUrl: "IT\/img\/34.jpg"
+ },
+ {
+  title: "Object Oriented Programming with C++ and Java",
+  author: "D samatha",
+  year: 2000,
+  quantity: 2,
+  imageUrl: "IT\/img\/35.jpg"
+ },
+ {
+  title: "Discrete Mathematics",
+  author: "B S>Grewal",
+  year: 1993,
+  quantity: 3,
+  imageUrl: "IT\/img\/36.jpg"
+ },
+ {
+  title: "Data Structures and Algorithms",
+  author: "Alfred v,Aho",
+  year: 2000,
+  quantity: 2,
+  imageUrl: "IT\/img\/37.jpg"
+ },
+ {
+  title: "Let Us C",
+  author: "Yashavant,Kanetkar",
+  year: 1995,
+  quantity: 10,
+  imageUrl: "IT\/img\/38.jpg"
+ },
+ {
+  title: "C",
+  author: "Herbret,Schildt",
+  year: 2000,
+  quantity: 11,
+  imageUrl: "IT\/img\/39.jpg"
+ },
+ {
+  title: "Fundamentals of IT",
+  author: "Alexis,Leon",
+  year: 1999,
+  quantity: 2,
+  imageUrl: "IT\/img\/40.jpg"
+ },
+ {
+  title: "Computers and Information Technology",
+  author: "E G.Rajan",
+  year: 2000,
+  quantity: 3,
+  imageUrl: "IT\/img\/41.jpg"
+ },
+ {
+  title: "Engineering Chemistry",
+  author: "B K Sharma",
+  year: 2001,
+  quantity: 10,
+  imageUrl: "IT\/img\/42.jpg"
+ },
+ {
+  title: "Engineering Physics",
+  author: "R K.Gaur",
+  year: 2001,
+  quantity: 9,
+  imageUrl: "IT\/img\/43.jpg"
+ },
+ {
+  title: "Engineering Chemisty",
+  author: "P C.Jain",
+  year: 1999,
+  quantity: 6,
+  imageUrl: "IT\/img\/44.jpg"
+ },
+ { title: 'Higher Engineering Mathematics', author: 'B S Grewal', year: 2000, quantity: 46, imageUrl: 'EEE_department/img/1.jpg' },
+        { title: 'Engineering Physics', author: 'R K Gaur', year: 2001, quantity: 9, imageUrl: 'EEE_department/img/2.jpg' },
+        {title: 'Fundamental of Physics',
+            author: 'David Halliday',
+            year: 2001,
+            quantity: 9,
+            imageUrl: 'EEE_department/img/3.jpg'
+        },
+        {
+          title: 'Modern Engineering Physics ',
+          author: 'A.S.Vasudeva',
+          year: 2001,
+          quantity: 7,
+          imageUrl: 'EEE_department/img/4.jpg'
+        },
+ {
+  title: 'Engineering Chemistry',
+  author: 'P.C.Jain and M.Jain',
+  year: 1999,
+  quantity: 9,
+  imageUrl: 'EEE_department/img/5.jpg'
+ },
+ {
+  title: 'Engineering Chemistry',
+  author: 'R Gopalan',
+  year: 1999,
+  quantity: 2,
+  imageUrl: 'EEE_department/img/6.jpg'
+ },
+ {
+  title: 'Engineering Drawing & Graphics',
+  author: 'K Venugopal',
+  year: 1998,
+  quantity: 21,
+  imageUrl: 'EEE_department/img/7.jpg'
+ },
+ {
+  title: 'Digital Logic and Computer Design',
+  author: 'M.Morris Mano',
+  year: 2001,
+  quantity: 9,
+  imageUrl: 'EEE_department/img/8.jpg'
+ },
+ {
+  title: 'Micro Electronics',
+  author: 'Jacob Millman',
+  year: 1987,
+  quantity: 8,
+  imageUrl: 'EEE_department/img/9.jpg'
+ },
+ {
+
+  title: 'Electronic Devices and Circuits',
+  author: 'Jacob Millman',
+  year: 1991,
+  quantity: 6,
+  imageUrl: 'EEE_department/img/10.jpg'
+ },
+ {
+  title: 'Fundamental of Electrical Engineering',
+  author: 'Vincent Del Toro',
+  year: 2000,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/11.jpg'
+ },
+ {
+  title: 'Let us C',
+  author: 'Yashavant Kanetkar',
+  year: 1999,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/12.jpg'
+ },
+ {
+  title: 'The C programming language',
+  author: 'Brian W. Kernighan and Dennis M.Ritchie',
+  year: 2001,
+  quantity: 12,
+  imageUrl: 'EEE_department/img/13.jpg'
+ },
+ {
+  title: 'Strength of Materials',
+  author: 'S. Ramamrutham & R.Narayanan',
+  year: 2000,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/14.jpg'
+ },
+ {
+  title: 'Engineering circuit analysis',
+  author: 'W. H. Haytjr & J. E. Kemmerly',
+  year: 2000,
+  quantity: 21,
+  imageUrl: 'EEE_department/img/15.jpg'
+ },
+ {
+  title: 'Network analysis',
+  author: 'M. E. Vanvalkunberg',
+  year: 2000,
+  quantity: 19,
+  imageUrl: 'EEE_department/img/16.jpg'
+ },
+ {
+  title: 'Pulse Digital & Switching Waveforms',
+  author: 'Jacob Millman & Herbert Taub',
+  year: 2000,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/17.jpg'
+ },
+ {
+  title: 'Microprocessors and Interfacing',
+  author: 'Douglas V Hall',
+  year: 1999,
+  quantity: 20,
+  imageUrl: 'EEE_department/img/18.jpg'
+ },
+ {
+  title: 'Introduction to Microprocessors',
+  author: 'Aditya P Mathur',
+  year: 1989,
+  quantity: 13,
+  imageUrl: 'EEE_department/img/19.jpg'
+ },
+ {
+  title: 'Programming in Ansi C',
+  author: 'E Balguruswamy',
+  year: 1989,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/20.jpg'
+ },
+ {
+  title: 'Electromagnetics ',
+  author: 'John D Kraus and Daniel A Fleisch',
+  year: 1999,
+  quantity: 8,
+  imageUrl: 'EEE_department/img/21.jpg'
+ },
+ {
+  title: 'Computer Architecture Organization',
+  author: 'John P Hayes',
+  year: 1998,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/22.jpg'
+ },
+ {
+  title: 'Electrics Power Systems',
+  author: 'C.L.Wadhwa',
+  year: 2000,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/23.jpg'
+ },
+ {
+  title: 'Modern Control Engineering',
+  author: 'K.Ogata',
+  year: 2000,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/24.jpg'
+ },
+ {
+  title: 'Integrated Circuits',
+  author: 'K.R.Botkar',
+  year: 1996,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/25.jpg'
+ },
+ {
+  title: 'Materials Science ',
+  author: 'M.Arumugam',
+  year: 1987,
+  quantity: 5,
+  imageUrl: 'EEE_department/img/26.jpg'
+ },
+ {
+  title: 'Power Electronics ',
+  author: 'M.D.Singh',
+  year: 1998,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/27.jpg'
+ },
+ {
+  title: 'Modern Power System Analysis',
+  author: 'I.J.Nagrath',
+  year: 1989,
+  quantity: 10,
+  imageUrl: 'EEE_department/img/28.jpg'
+ },
+ {
+  title: 'Engineering Drawing ',
+  author: 'N D Bhatt',
+  year: 2000,
+  quantity: 21,
+  imageUrl: 'EEE_department/img/29.jpg'
+ }, {
+  title: 'Higher Engineering Mathematics',
+  author: 'B. S. Grewal',
+  year: 2017,
+  quantity: 47,
+  imageUrl: 'ECE/img/1.jpg'
+ },
+ {
+  title: '“Computer System Architecture',
+  author: 'M. Morris Mano',
+  year: 1996,
+  quantity: 7,
+  imageUrl: 'ECE/img/2.jpg'
+ },
+ {
+  title: 'Digital Design',
+  author: 'M. Morris Mano and Michael',
+  year: 2001,
+  quantity: 9,
+  imageUrl: 'ECE/img/3.jpg'
+ },
+ {
+  title: 'Modern Digital Electronics',
+  author: 'R.P Jain',
+  year: 2003,
+  quantity: 7,
+  imageUrl: 'ECE/img/4.jpg'
+ },
+ {
+  title: 'signals and systems',
+  author: 'S.Haykin and B.V Veen,',
+  quantity: 8,
+  imageUrl: 'ECE/img/5.jpg'
+ },
+ {
+  title: '“Probability, Random Variables & Random Signal Principles',
+  author: 'Peyton Z. Peebles',
+  year: 2001,
+  quantity: 11,
+  imageUrl: 'ECE/img/6.jpg'
+ },
+ {
+  title: 'Probability, Random Variables and Stochastic',
+  author: 'Athanasios Papoulis and S. Unnikrishna Pillai,',
+  year: 2002,
+  quantity: 7,
+  imageUrl: 'ECE/img/7.jpg'
+ },
+ {
+  title: 'Integrated Electronics',
+  author: 'Jacob Millman, Christos Halkias',
+  year: 2009,
+  quantity: 10,
+  imageUrl: 'ECE/img/8.jpg'
+ },
+ {
+  title: 'Pulse Digital & Switching Waveforms',
+  author: 'Jacob Millman& Herbert Taub',
+  quantity: 10,
+  imageUrl: 'ECE/img/9.jpg'
+ },
+ {
+  title: 'Higher Engineering Mathematics”',
+  author: 'B. S. Grewal',
+  year: 2017,
+  quantity: 46,
+  imageUrl: 'ECE/img/10.jpg'
+ },
+ {
+  title: 'Control Systems Engineering”',
+  author: '. I.J. Nagrath& M.Gopal',
+  quantity: 13,
+  imageUrl: 'ECE/img/11.jpg'
+ },
+ {
+  title: 'Automatic Control Systems',
+  author: 'Benjamin C. Kuo',
+  quantity: 6,
+  imageUrl: 'ECE/img/12.jpg'
+ },
+ {
+  title: 'Integrated Electronics',
+  author: 'Jacob Millman, Christos Halkia',
+  year: 2009,
+  quantity: 10,
+  imageUrl: 'ECE/img/13.jpg'
+ },
+ {
+  title: '“Electronic Circuit Analysis and Design',
+  author: 'Donald A. Neamon',
+  quantity: 8,
+  imageUrl: 'ECE/img/14.jpg'
+ },
+ {
+  title: '“Communication Systems',
+  author: 'Simon Haykins',
+  year: 2009,
+  quantity: 9,
+  imageUrl: 'ECE/img/15.jpg'
+ },
+ {
+  title: '“Analog Communication Systems',
+  author: 'Sanjay Sharma',
+  quantity: 8,
+  imageUrl: 'ECE/img/16.jpg'
+ },
+ {
+  title: '“ Principles of Electromagnetic”',
+  author: 'M.N.O. Sadiku',
+  year: 2007,
+  quantity: 15,
+  imageUrl: 'ECE/img/17.jpg'
+ },
+ {
+  title: 'Electromagnetic Field Theory and Transmission Lines',
+  author: 'G. Sasi Bhushana Rao',
+  year: 2012,
+  quantity: 7,
+  imageUrl: 'ECE/img/18.jpg'
+ },
+ {
+  title: 'Architecture Programming and Applications,',
+  author: 'Ramesh S. Gaonkar',
+  quantity: 9,
+  imageUrl: 'ECE/img/19.jpg'
+ },
+ {
+  title: 'The 8051 Microcontroller and Embedded Systems',
+  author: 'Muhammed Ali Mazidi, Janice GillispieMazidi',
+  year: 2008,
+  quantity: 11,
+  imageUrl: 'ECE/img/20.jpg'
+ },
+ {
+  title: 'The 8051 Microcontroller & Embedded Systems Using Assembly and C',
+  author: 'Kenneth. J. Ayala, DhananjayV. Gadre',
+  year: 2010,
+  quantity: 10,
+  imageUrl: 'ECE/img/20.jpg'
+ },
+ {
+  title: '“modern Electronic Instrumentation and Measurement Techniques',
+  author: 'A.D.Helfrick and W.D.Cooper',
+  year: 2002,
+  quantity: 6,
+  imageUrl: 'ECE/img/21.jpg'
+ },
+ {
+  title: 'Electrical and Electronic Measurements and Instrumentation',
+  author: 'A.K.Sawhney',
+  year: 2002,
+  quantity: 5,
+  imageUrl: 'ECE/img/22.jpg'
+ },
+ {
+  title: ' Microelectronic circuits',
+  author: '1.Adel S.Sedra, Kenneth C.Smith',
+  year: 2009,
+  quantity: 4,
+  imageUrl: 'ECE/img/23.jpg'
+ },
+ {
+  title: 'Integated Electronics Analog and Digital Circuits ans Systems',
+  author: 'Jacob Millman, Christos C. Halkias',
+  year: 1972,
+  quantity: 7,
+  imageUrl: 'ECE/img/24.jpg'
+ },
+ {
+  title: '“Principles of Communication Systems',
+  author: 'H.Taub and D.Schilling',
+  year: 2003,
+  quantity: 11,
+  imageUrl: 'ECE/img/25.jpg'
+ },
+ {
+  title: 'Digital Communications',
+  author: '. P.Ramakrishna rao',
+  year: 2011,
+  quantity: 13,
+  imageUrl: 'ECE/img/26.jpg'
+ },
+ {
+  title: 'EMBEDDED SYSTEMS AND IOT',
+  author: 'Frank Vahid, Tony Givargis',
+  quantity: 16,
+  imageUrl: 'ECE/img/27.jpg'
+ },
+ {
+  title: 'INTERNET OF THINGS Architecture and Design Principles,',
+  author: 'Raj Kamal',
+  year: 2017,
+  quantity: 19,
+  imageUrl: 'ECE/img/28.jpg'
+ },
+ {
+  title: 'OP-AMP and Linear ICs',
+  author: 'Ramakant A. Gayakwad',
+  year: 2001,
+  quantity: 5,
+  imageUrl: 'ECE/img/29.jpg'
+ },
+ {
+  title: 'Design with Operational Amplifiers and Analog Integrated Circuits',
+  author: 'Sergio Franco',
+  year: 2007,
+  quantity: 7,
+  imageUrl: 'ECE/img/30.jpg'
+ },
+ {
+  title: 'Antenna Theory',
+  author: 'C.A. Balanis',
+  year: 2005,
+  quantity: 8,
+  imageUrl: 'ECE/img/31.jpg'
+ },
+ {
+  title: 'Antennas and Wave Propagation',
+  author: 'G.S.N. Raju',
+  year: 2007,
+  quantity: 9,
+  imageUrl: 'ECE/img/32.jpg'
+ },
+ {
+  title: 'Design through Verilog HDL',
+  author: 'T.R. Padmanabhan and B. Bala Tripura Sundari',
+  year: 2004,
+  imageUrl: 'ECE/img/33.jpg'
+ },
+ {
+  title: 'Biomedical Instrumentation and Measurements',
+  author: 'Leslie Cromwell, Fred J Weibell and Erich A Pfeiffer',
+  year: 2003,
+  quantity: 11,
+  imageUrl: 'ECE/img/34.jpg'
+ },
+ {
+  title: 'Hand Book of Biomedical Instrumentation',
+  author: 'Khandpur R.S',
+  year: 2003,
+  quantity: 4,
+  imageUrl: 'ECE/img/35.jpg'
+ },
+ {
+  title: 'Communication Systems',
+  author: 'A.B. Carlson, Mc. Graw Hill Publishers',
+  quantity: 13,
+  imageUrl: 'ECE/img/36.jpg'
+ },
+ {
+  title: 'Digital Communications',
+  author: ' Simon Haykin , John Wiley & Sons',
+  quantity: 7,
+  imageUrl: 'ECE/img/37.jpg'
+ },
+ {
+  title: 'Protocols And Architectures for Wireless Sensor Networks',
+  author: 'Holger Karl & Andreas Willig',
+  year: 2005,
+  quantity: 9,
+  imageUrl: 'ECE/img/38.jpg'
+ },
+ {
+  title: 'Design of Analog CMOS Integrated Circuits',
+  author: 'Behzad Razavi',
+  year: 2002,
+  quantity: 9,
+  imageUrl: 'ECE/img/39.jpg'
+ },
+ {
+  title: 'VLSI Design Techniques for Analog and Digital Circuits',
+  author: 'Randall Geiger, Phillip Allen, Noel Strader,',
+  year: 2010,
+  quantity: 11,
+  imageUrl: 'ECE/img/40.jpg'
+ },
+ {
+  title: 'Data Structures using C and C++”',
+  author: 'Y. Langsam, M. Augenstin and A. Tannenbaum',
+  year: 1995,
+  quantity: 12,
+  imageUrl: 'ECE/img/41.jpg'
+ },
+ {
+  title: 'Data Structures and Algorithm Analysis in C',
+  author: 'Mark Allen Weiss',
+  quantity: 10,
+  imageUrl: 'ECE/img/42.jpg'
+ },
+ {
+  title: 'Digital Signal Processing, Principles, Algorithms, and Applications',
+  author: 'John G. Proakis, Dimitris G.Manolakis,',
+  year: 2007,
+  imageUrl: 'ECE/img/43.jpg'
+ },
+ {
+  title: 'Digital Signal Processors – Architecture, Programming and Applications',
+  author: 'B.Venkataramani, M.Bhaskar',
+  year: 2002,
+  imageUrl: 'ECE/img/44.jpg'
+ },
+ {
+  title: 'Basic VLSI Design',
+  author: 'Douglas A, Pucknell, Kamran Eshraghian',
+  imageUrl: 'ECE/img/45.jpg'
+ },
+ {
+  title: 'Principles of CMOS VLSI Design”',
+  author: 'Weste and Eshraghian',
+  year: 1999,
+  quantity: 12,
+  imageUrl: 'ECE/img/46.jpg'
+ },
+ {
+  title: 'Managerial Economics and Financial Analysis',
+  author: 'A.R. AryaSri',
+  year: 2014,
+  imageUrl: 'ECE/img/47.jpg'
+ },
+ {
+  title: 'Industrial Organization & Engineering Economics',
+  author: 'S.C. Sharma and Banga T. R',
+  year: 2006,
+  imageUrl: 'ECE/img/48.jpg'
+ },
+ {
+  title: 'Wireless & Cellular Telecommunications',
+  author: 'William C.Y.Lee',
+  quantity: 20,
+  imageUrl: 'ECE/img/49.jpg'
+ },
+ {
+  title: 'Wireless communications Principles and Practice',
+  author: 'Theodore S.Rappaport',
+  quantity: 17,
+  imageUrl: 'ECE/img/50.jpg'
+ },
+ {
+  title: 'DataandComputerCommunication',
+  author: 'WilliamStallings',
+  year: 2000,
+  quantity: 14,
+  imageUrl: 'ECE/img/51.jpg'
+ },
+ {
+  title: 'Computer Networks”',
+  author: 'Andrew S.Tanenbaum',
+  year: 2003,
+  quantity: 6,
+  imageUrl: 'ECE/img/52.jpg'
+ },
+ {
+  title: 'Satellite Communication',
+  author: 'T. Pratt and C.W. Boastian',
+  year: 2002,
+  imageUrl: 'ECE/img/53.jpg'
+ },
+ {
+  title: 'Global Navigation Satellite Systems',
+  author: 'G S RAO,',
+  year: 2010,
+  quantity: 6,
+  imageUrl: 'ECE/img/54.jpg'
+ },
+ {
+  title: 'Digital Processing of Speech Signals',
+  author: 'L.R. Rabiner and R.E Schafer,',
+  year: 2008,
+  imageUrl: 'ECE/img/55.jpg'
+ },
+ {
+  title: 'Digital Image Processing',
+  author: 'TRafael C Gonzalez, Richard E Woods',
+  year: 2004,
+  quantity: 19,
+  imageUrl: 'ECE/img/56.jpg'
+ },
+ {
+  title: 'LowpowerCMOSVLSIcircuitdesign',
+  author: '.Kaushik Roy, S.C.Prasad',
+  year: 2000,
+  quantity: 10,
+  imageUrl: 'ECE/img/57.jpg'
+ },
+ {
+  title: 'Low power digital CMOS design',
+  author: '.A.P. Chandrasekaran, R.W. Broadersen',
+  year: 1995,
+  quantity: 13,
+  imageUrl: 'ECE/img/58.jpg'
+ },
+ {
+  title: 'Microwave& Radar Engineering',
+  author: 'M. Kulakarni',
+  year: 2014,
+  quantity: 19,
+  imageUrl: 'ECE/img/59.jpg'
+ },
+ {
+  title: 'Introduction to Radar Systems',
+  author: '. M.I. Skolnik',
+  year: 2007,
+  quantity: 10,
+  imageUrl: 'ECE/img/60.jpg'
+ }, 
+ {
+  title: 'Higher Engineering Mathematics',
+  author: 'B. S. Grewal',
+  year: 2000,
+  quantity: 46,
+  imageUrl: 'CSM and CSD/img/1.jpg'
+ },
+ {
+  title: 'Advanced Engineering Mathematics',
+  author: 'Erwin Kreyszig',
+  year: 1999,
+  quantity: 9,
+  imageUrl: 'CSM and CSD/img/2.jpg'
+ },
+ {
+  title: 'Engineering Mathematics',
+  author: 'N.P.Bali',
+  year: 2007,
+  quantity: 4,
+  imageUrl: 'CSM and CSD/img/3.jpg'
+ },
+ {
+  title: 'Digital Design',
+  author: 'M.Morris Mano',
+  year: 2001,
+  quantity: 9,
+  imageUrl: 'CSM and CSD/img/4.jpg'
+ },
+ {
+  title: 'Switching and Finite Automata Theory',
+  author: 'Z Kohavi',
+  year: 1978,
+  quantity: 9,
+  imageUrl: 'CSM and CSD/img/5.jpg'
+ },
+ {
+  title: 'Data Structures and Programs in C',
+  author: 'R.L.Kruse',
+  year: 2000,
+  quantity: 2,
+  imageUrl: 'CSM and CSD/img/6.jpg'
+ },
+ {
+  title: 'Computer System Architecture',
+  author: 'M.Morris Mano',
+  year: 2001,
+  quantity: 8,
+  imageUrl: 'CSM and CSD/img/7.jpg'
+ },
+ {
+  title: 'JAVA The Complete Reference',
+  author: 'Herbert Schildt',
+  year: 2001,
+  quantity: 10,
+  imageUrl: 'CSM and CSD/img/8.jpg'
+ },
+ {
+  title: 'Programming with JAVA - A Primer',
+  author: 'E Balagurusamy',
+  year: 1998,
+  quantity: 22,
+  imageUrl: 'CSM and CSD/img/9.jpg'
+ },
+ {
+  title: 'Data Communications and Networking',
+  author: 'Behrouz A Forouzan',
+  year: 2000,
+  quantity: 5,
+  imageUrl: 'CSM and CSD/img/10.jpg'
+ },
+ {
+  title: 'Computer Networks',
+  author: 'Andrew S. Tanenbaum',
+  year: 2000,
+  quantity: 6,
+  imageUrl: 'CSM and CSD/img/11.jpg'
+ },
+ {
+  title: 'Data and Computer Communications',
+  author: 'William Stallings',
+  year: 2001,
+  quantity: 14,
+  imageUrl: 'CSM and CSD/img/12.jpg'
+ },
+ {
+  title: 'Discrete Mathematics for computer scientists &Mathematicians',
+  author: 'Joe L. Mott, Abraham Kandel & T. P. Baker',
+  year: 1997,
+  quantity: 14,
+  imageUrl: 'CSM and CSD/img/13.jpg'
+ },
+ {
+  title: 'Discrete Mathematical Structures with Applications to Computer Science',
+  author: 'J. P. Tremblay, R. Manohar',
+  year: 1997,
+  quantity: 14,
+  imageUrl: 'CSM and CSD/img/14.jpg'
+ },
+ {
+  title: 'Artificial Intelligence',
+  author: 'Rich E & Knight K',
+  year: 1991,
+  quantity: 20,
+  imageUrl: 'CSM and CSD/img/15.jpg'
+ },
+ {
+  title: 'Operating Systems: Internals and Design Principles',
+  author: 'William Stalling',
+  year: 2001,
+  quantity: 10,
+  imageUrl: 'CSM and CSD/img/16.jpg'
+ },
+ {
+  title: 'Operating Systems',
+  author: 'Andrew S. Tanenbaum',
+  year: 2001,
+  quantity: 6,
+  imageUrl: 'CSM and CSD/img/17.jpg'
+ },
+ {
+  title: 'Compilers',
+  author: 'Alfred V Aho',
+  year: 1999,
+  quantity: 16,
+  imageUrl: 'CSM and CSD/img/18.jpg'
+ },
+ {
+  title: 'The Design and Analysis of computer Algorithms',
+  author: 'Alfred V Aho',
+  year: 1998,
+  quantity: 14,
+  imageUrl: 'CSM and CSD/img/19.jpg'
+ },
+ {
+  title: 'Microprocessors and Interfacing, Programming and Hardware',
+  author: 'Douglass V. Hall',
+  year: 1999,
+  quantity: 20,
+  imageUrl: 'CSM and CSD/img/20.jpg'
+ },
+ {
+  title: 'Data Structures, Algorithms and Applications in Java',
+  author: 'Sartaj Sahni',
+  year: 2000,
+  quantity: 2,
+  imageUrl: 'CSM and CSD/img/21.jpg'
+ },
+ {
+  title: 'Database System Concepts',
+  author: 'A.Silberschatz.H.Korth',
+  year: 1997,
+  quantity: 9,
+  imageUrl: 'CSM and CSD/img/22.jpg'
+ },
+ {
+  title: 'Database Management Systems',
+  author: 'Raghu Ramakrishnan, Johannes Gehrke',
+  year: 2000,
+  quantity: 6,
+  imageUrl: 'CSM and CSD/img/23.jpg'
+ },
+ {
+  title: 'Neural Networks-A comprehensive Foundation',
+  author: 'Simon Haykin',
+  year: 1999,
+  quantity: 4,
+  imageUrl: 'CSM and CSD/img/24.jpg'
+ },
+ {
+  title: 'Digital Image Processing',
+  author: 'Gonzalez Rafael C and Woods Richard E',
+  year: 2000,
+  quantity: 19,
+  imageUrl: 'CSM and CSD/img/25.jpg'
+ },
+ {
+  title: 'Robotics',
+  author: 'Fu.K.S',
+  year: 1987,
+  quantity: 6,
+  imageUrl: 'CSM and CSD/img/26.jpg'
+ },
+ {
+  title: 'Engineering Physics',
+  author: 'R K Gaur',
+  year: 2001,
+  quantity: 9,
+  imageUrl: 'CSM and CSD/img/27.jpg'
+ },
+ {
+  title: 'Fundamentals of Physics',
+  author: 'David Halliday',
+  year: 2001,
+  quantity: 9,
+  imageUrl: 'CSM and CSD/img/28.jpg'
+ },
+ {
+  title: 'Modern Engineering Physics',
+  author: 'A.S.Vasudeva',
+  year: 2001,
+  quantity: 7,
+  imageUrl: 'CSM and CSD/img/29.jpg'
+ },
+ {
+  title: 'Engineering Chemistry',
+  author: 'P.C.Jain & M.Jain',
+  year: 1999,
+  quantity: 9,
+  imageUrl: 'CSM and CSD/img/30.jpg'
+ },
+ {
+  title: 'Engineering Chemistry',
+  author: 'R.Gopalan',
+  year: 1999,
+  quantity: 2,
+  imageUrl: 'CSM and CSD/img/31.jpg'
+ },
+ {
+  title: 'Engineering Drawing ',
+  author: 'N.D.Bhatt',
+  year: 2000,
+  quantity: 21,
+  imageUrl: 'CSM and CSD/img/32.jpg'
+ },
+ {
+  title: 'Let us C',
+  author: 'Yashvant Katnekar',
+  year: 1999,
+  quantity: 10,
+  imageUrl: 'CSM and CSD/img/33.jpg'
+ },
+ {
+  title: 'Higher enginnering mathematics',
+  author: 'B S Grewal',
+  year: 2000,
+  quantity: 46,
+  imageUrl: 'CSE/img/1.jpg'
+ },
+ {
+  title: 'Advanced engineering mathematics ',
+  author: 'Erwin Kreyszig',
+  year: 1999,
+  quantity: 10,
+  imageUrl: 'CSE/img/2.jpg'
+ },
+ {
+  title: 'Engneering mathematics',
+  author: 'N.P.Bali',
+  year: 2007,
+  quantity: 4,
+  imageUrl: 'CSE/img/3.jpg'
+ },
+ {
+  title: 'Engneering physics',
+  author: 'R.K.Gaur',
+  year: 2001,
+  quantity: 9,
+  imageUrl: 'CSE/img/4.jpg'
+ },
+ {
+  title: 'Engineering Drawing',
+  author: 'ND Bhatt',
+  year: 2000,
+  quantity: 21,
+  imageUrl: 'CSE/img/5.jpg'
+ },
+ {
+  title: 'Text book for engineering drawing',
+  author: 'K.L.Narayana',
+  year: 1999,
+  quantity: 3,
+  imageUrl: 'CSE/img/6.jpg'
+ },
+ {
+  title: 'Elements of Workshop Technology',
+  author: 'S.K.Hajra',
+  year: 1997,
+  quantity: 5,
+  imageUrl: 'CSE/img/7.jpg'
+ },
+ {
+  title: 'Millamans Integrated Electonics',
+  author: 'Jacob millman',
+  year: 2000,
+  quantity: 6,
+  imageUrl: 'CSE/img/8.jpg'
+ },
+ {
+  title: 'Micro Electronics',
+  author: 'Jacob Millman',
+  year: 1987,
+  quantity: 8,
+  imageUrl: 'CSE/img/9.jpg'
+ },
+ {
+  title: 'Dgital Logic and computer Design',
+  author: 'M.Morris Mano',
+  year: 2001,
+  quantity: 10,
+  imageUrl: 'CSE/img/10.jpg'
+ },
+ {
+  title: 'Switching and Finite Automata Theory',
+  author: 'Z Kohavi',
+  year: 1978,
+  quantity: 9,
+  imageUrl: 'CSE/img/11.jpg'
+ },
+ {
+  title: 'Data Communination and Networking ',
+  author: 'Behrouz A Forouzan',
+  year: 2000,
+  quantity: 5,
+  imageUrl: 'CSE/img/12.jpg'
+ },
+ {
+  title: 'Let us c',
+  author: 'Yshavant Kanetkar',
+  year: 1995,
+  quantity: 10,
+  imageUrl: 'CSE/img/13.jpg'
+ },
+ {
+  title: 'Discrete Mathematics',
+  author: 'Joe L. Mott',
+  year: 2015,
+  quantity: 10,
+  imageUrl: 'CSE/img/14.jpg'
+ },
+ {
+  title: 'DMS with applications',
+  author: 'J P Tremblay',
+  year: 1997,
+  quantity: 14,
+  imageUrl: 'CSE/img/15.jpg'
+ },
+ {
+  title: 'Data and Computer Communication ',
+  author: 'William Stallings',
+  year: 2001,
+  quantity: 14,
+  imageUrl: 'CSE/img/16.jpg'
+ },
+ {
+  title: 'Java',
+  author: 'Herbert Schidlt',
+  year: 2001,
+  quantity: 10,
+  imageUrl: 'CSE/img/17.jpg'
+ },
+ {
+  title: 'Programming with java',
+  author: 'E Balaguruswamy',
+  year: 1998,
+  quantity: 22,
+  imageUrl: 'CSE/img/18.jpg'
+ },
+ {
+  title: 'Computer System And organisation ',
+  author: 'Morris Mano',
+  year: 2001,
+  quantity: 8,
+  imageUrl: 'CSE/img/19.jpg'
+ },
+ {
+  title: 'Modern Operating Systems',
+  author: 'Andrew S Tanenbaum',
+  year: 2001,
+  quantity: 6,
+  imageUrl: 'CSE/img/20.jpg'
+ },
+ {
+  title: 'Operating System',
+  author: 'William Stallings',
+  year: 2001,
+  quantity: 10,
+  imageUrl: 'CSE/img/21.jpg'
+ },
+ {
+  title: 'Fundamentals of math Statistics',
+  author: 'S C gupta and VK Kapoor',
+  year: 2000,
+  quantity: 6,
+  imageUrl: 'CSE/img/22.jpg'
+ },
+ {
+  title: 'Microprocessor and Interfacing',
+  author: 'Douglass V Hall',
+  year: 1999,
+  quantity: 20,
+  imageUrl: 'CSE/img/23.jpg'
+ },
+ {
+  title: 'Introduction to Microprocessor',
+  author: 'A.P.Mathur',
+  year: 1989,
+  quantity: 14,
+  imageUrl: 'CSE/img/24.jpg'
+ },
+ {
+  title: 'Computer Networks',
+  author: 'Andrew S Tanenbaum',
+  year: 2000,
+  quantity: 11,
+  imageUrl: 'CSE/img/25.jpg'
+ },
+ {
+  title: 'Computer Graphics',
+  author: 'Donald Hearn',
+  year: 2000,
+  quantity: 6,
+  imageUrl: 'CSE/img/26.jpg'
+ },
+ {
+  title: 'Computer Graphics',
+  author: 'J D Foley',
+  year: 1999,
+  quantity: 14,
+  imageUrl: 'CSE/img/27.jpg'
+ },
+ {
+  title: 'Artifical Intilligence',
+  author: 'Elaine Rich',
+  year: 1991,
+  quantity: 20,
+  imageUrl: 'CSE/img/28.jpg'
+ },
+ {
+  title: 'Compilers',
+  author: 'Alfred V aho',
+  year: 1999,
+  quantity: 16,
+  imageUrl: 'CSE/img/29.jpg'
+ },
+ {
+  title: 'Database System Concepts',
+  author: 'A.Silberschatz',
+  year: 1997,
+  quantity: 9,
+  imageUrl: 'CSE/img/30.jpg'
+ },
+ {
+  title: 'Database  Management System ',
+  author: 'Raghu Ramakrisnan',
+  year: 2000,
+  quantity: 6,
+  imageUrl: 'CSE/img/31.jpg'
+ },
+ {
+  title: 'Fundamentals Of Computer Algorithms',
+  author: 'Ellis Horowitz',
+  year: 2000,
+  quantity: 14,
+  imageUrl: 'CSE/img/32.jpg'
+ },
+ {
+  title: 'The Design and Analysis of comp algorithm',
+  author: 'Alfred V aho',
+  year: 1998,
+  quantity: 14,
+  imageUrl: 'CSE/img/33.jpg'
+ },
+ {
+  title: 'Digital image Processing',
+  author: 'Gonzalez Rafael C ',
+  year: 2000,
+  quantity: 9,
+  imageUrl: 'CSE/img/34.jpg'
+ },
+ {
+  title: 'Neural networks',
+  author: 'Simon Hyakin',
+  year: 1999,
+  quantity: 4,
+  imageUrl: 'CSE/img/35.jpg'
+ },
+ {
+  title: 'Software Engneering',
+  author: 'Roger S Pressman',
+  year: 2001,
+  quantity: 18,
+  imageUrl: 'CSE/img/36.jpg'
+ },
+ {
+  title: 'introduction of chemical engineering ',
+  author: 'S. K. Ghosal, S. K. Sanyal and S. Dutt “',
+  quantity: 15,
+  year: 2011,
+  imageUrl: 'chemical\/img\/1.jpg'
+ },
+ {
+  'title': 'Elementary Chemical Engineering',
+  author: 'Max S. Peters',
+  quantity: 18,
+  year: 2009,
+  imageUrl: 'chemical\/img\/2.jpg'
+ },
+ {
+  'title': 'Engineering Drawing',
+  author: 'N. D. Bhatt',
+  quantity: 22,
+  year: 2014,
+  imageUrl: 'chemical\/img\/3.jpg'
+ },
+ {
+  'title': 'Engineering Graphics with Auto CAD',
+  author: 'R. B. Choudary',
+  quantity: 16,
+  year: 2015,
+  imageUrl: 'chemical\/img\/4.jpg'
+ },
+ {
+  'title': 'Elements of Workshop Technology',
+  author: ' S.K.Hajra Choudhury ',
+  quantity: 21,
+  year: 2017,
+  imageUrl: 'chemical\/img\/5.jpg'
+ },
+ {
+  'title': 'Engineering Ethics includes Human Values',
+  author: '. M.Govindarajan, S.Natarajananad, V.S.SenthilKumar',
+  quantity: 17,
+  year: 2009,
+  imageUrl: 'chemical\/img\/6.jpg'
+ },
+ {
+  'title': 'Language and Life',
+  author: 'Oriental Black Swan',
+  quantity: 15,
+  year: 2018,
+  imageUrl: 'chemical\/img\/7.jpg'
+ },
+ {
+  'title': 'Thermal Engineering',
+  author: 'R.S. Khurmi and J.K. Gupta',
+  quantity: 11,
+  year: 2018,
+  imageUrl: 'chemical\/img\/8.jpg'
+ },
+ {
+  'title': 'Strength of Materials',
+  author: 'Dr. R.K. Bansal',
+  quantity: 10,
+  year: 2011,
+  imageUrl: 'chemical\/img\/9.jpg'
+ },
+ {
+  'title': 'A Text Book of Engineering Thermodynamics',
+  author: 'R.K.Rajput',
+  quantity: 13,
+  year: 2007,
+  imageUrl: 'chemical\/img\/10.jpg'
+ },
+ {
+  'title': 'Electronic Devices and Circuit Theory',
+  author: 'Robert L. Boyiestad, Louis Nashelsky',
+  quantity: 14,
+  year: 2015,
+  imageUrl: 'chemical\/img\/11.jpg'
+ },
+ {
+  'title': 'Cengage Learning , Computer Science: A Structured Programming Approach Using C',
+  author: 'B. A. Forouzan and R. F. Gilberg “',
+  quantity: 23,
+  year: 2009,
+  imageUrl: 'chemical\/img\/12.jpg'
+ },
+ {
+  'title': 'Problem solving and program Design in C',
+  author: 'Jeri R. Hanly , Elliot B .Koffman',
+  quantity: 25,
+  year: 2010,
+  imageUrl: 'chemical\/img\/13.jpg'
+ },
+ {
+  'title': 'Perspertives of Environmental Studies',
+  author: 'Anubha Kaushik & C.P.Kaushik',
+  quantity: 18,
+  year: 2015,
+  imageUrl: 'chemical\/img\/14.jpg'
+ },
+ {
+  'title': 'Advanced Engineering Mathematics',
+  author: 'Erwin Kreyszig,',
+  quantity: 20,
+  year: 2011,
+  imageUrl: 'chemical\/img\/15.jpg'
+ },
+ {
+  'title': 'Organic Chemistry',
+  author: 'Arun Bahl & B.S.Bahl',
+  quantity: 16,
+  year: 2015,
+  imageUrl: 'chemical\/img\/16.jpg'
+ },
+ {
+  'title': 'Cell Biology, Genetics, Molecular Biology, Evolution and Ecology',
+  author: 'Dr. P.S. Verma, Dr. V.K. Agarwal',
+  quantity: 9,
+  year: 2009,
+  imageUrl: 'chemical\/img\/17.jpg'
+ },
+ {
+  'title': 'Fundamentals of biochemistry',
+  author: 'J.L.Jain, S.Jain And N.Jain',
+  quantity: 12,
+  year: 2000,
+  imageUrl: 'chemical\/img\/18.jpg'
+ },
+ {
+  'title': 'Basic principles and Calculations in Chemical Engineering',
+  author: 'David M. Himmelblau',
+  quantity: 19,
+  year: 1995,
+  imageUrl: 'chemical\/img\/19.jpg'
+ },
+ {
+  'title': 'Chemical Process Principles Part-I - Material and Energy balances',
+  author: 'Olaf A Hougen, K.M. Watson and R. A. Ragatz',
+  quantity: 7,
+  year: 1995,
+  imageUrl: 'chemical\/img\/20.jpg'
+ },
+ {
+  'title': 'Unit Operations of Chemical Engineering',
+  author: 'W.L. McCabe, J.C. Smith and P.Harriot',
+  quantity: 16,
+  year: 2005,
+  imageUrl: 'chemical\/img\/21.jpg'
+ },
+ {
+  'title': 'Chemical Engineering -Vol.2',
+  author: 'J.H.Coulson and J.F.Richardson',
+  quantity: 13,
+  year: 2002,
+  imageUrl: 'chemical\/img\/22.jpg'
+ },
+ {
+  'title': 'Principles of Management',
+  author: 'P.C. Tripathi, P.N.Reddy',
+  quantity: 19,
+  year: 2008,
+  imageUrl: 'chemical\/img\/23.jpg'
+ },
+ {
+  'title': 'Managerial Economics and Financial Analysis',
+  author: ' A.R. AryaSri',
+  quantity: 14,
+  year: 2013,
+  imageUrl: 'chemical\/img\/24.jpg'
+ },
+ {
+  'title': 'Operation Research',
+  author: 'S.D. Sharma',
+  quantity: 15,
+  year: 2015,
+  imageUrl: 'chemical\/img\/25.jpg'
+ },
+ {
+  'title': 'Introduction to Chemical Engineering Thermodynamics',
+  author: 'J. M. Smith, H. C. Van Ness and M. M. Abbott',
+  quantity: 24,
+  year: 2000,
+  imageUrl: 'chemical\/img\/26.jpg'
+ },
+ {
+  'title': 'A Text Book of Fluid Mechanics and Hydraulic Machines',
+  author: 'R. K. Bansal',
+  quantity: 21,
+  year: 2008,
+  imageUrl: 'chemical\/img\/27.jpg'
+ },
+ {
+  'title': 'Introductory Methods of Numerical Analysis',
+  author: 'Sastry, S. S',
+  quantity: 19,
+  year: 2012,
+  imageUrl: 'chemical\/img\/28.jpg'
+ },
+ {
+  'title': 'Outlines of Polymer Technology: Manufacture of Polymers',
+  author: 'R. Sinha',
+  quantity: 22,
+  year: 2004,
+  imageUrl: 'chemical\/img\/29.jpg'
+ },
+ {
+  'title': 'The Lean Startup',
+  author: 'Eric Ries',
+  quantity: 10,
+  year: 2011,
+  imageUrl: 'chemical\/img\/30.jpg'
+ },
+ {
+  'title': 'Ignore Everybody – And 39 Other Keys To Creativity',
+  author: 'Hugh MacLeod',
+  quantity: 26,
+  year: 2009,
+  imageUrl: 'chemical\/img\/31.jpg'
+ },
+ {
+  'title': 'Strategies for Creative Problem Solving',
+  author: 'H. Scott Fogler and Steven E. LeBlanc',
+  quantity: 11,
+  year: 1995,
+  imageUrl: 'chemical\/img\/32.jpg'
+ },
+ {
+  'title': 'Dryden’s out lines of chemical Technology',
+  author: 'Gopala Rao, M. and Marshall Sitting',
+  quantity: 17,
+  year: 2005,
+  imageUrl: 'chemical\/img\/33.jpg'
+ },
+ {
+  'title': 'Masstransfer operations',
+  author: 'Treybal R.E',
+  quantity: 10,
+  year: 1980,
+  imageUrl: 'chemical\/img\/34.jpg'
+ },
+ {
+  'title': 'Chemical Process Safety (Fundamentals with Applications)',
+  author: 'D.A. Crowl and J.F. Louvar',
+  quantity: 24,
+  year: 2011,
+  imageUrl: 'chemical\/img\/35.jpg'
+ },
+ {
+  'title': 'Hand book of Fertilizer Technology',
+  quantity: 13,
+  year: 2002,
+  imageUrl: 'chemical\/img\/36.jpg'
+ },
+ {
+  'title': 'Lachman \/ Lieberman’s The Theory and Practice of Industrial Pharmacy',
+  author: 'Roop K. Khar, S. P. Vyas, Farhan J. Ahmad and Gaurav K. Jain',
+  quantity: 18,
+  year: 2013,
+  imageUrl: 'chemical\/img\/37.jpg'
+ },
+ {
+  'title': 'Handbook of Batteries',
+  author: 'David Linden and Thomas B. Reddy',
+  quantity: 9,
+  year: 2002,
+  imageUrl: 'chemical\/img\/38.jpg'
+ },
+ {
+  'title': 'Principles of Mass Transfer and Seperation Processes',
+  author: 'Binay.K. Dutta',
+  quantity: 17,
+  year: 2007,
+  imageUrl: 'chemical\/img\/39.jpg'
+ },
+ {
+  'title': 'Chemical Reaction Engineering',
+  author: 'Levenspiel',
+  quantity: 29,
+  year: 2001,
+  imageUrl: 'chemical\/img\/40.jpg'
+ },
+ {
+  'title': 'Process Systems Analysis and Control',
+  author: 'Donald R. Coughnowr, Steven E. LeBlanc',
+  quantity: 11,
+  year: 2013,
+  imageUrl: 'chemical\/img\/41.jpg'
+ },
+ {
+  'title': 'Environmental Pollution Control Engineering',
+  author: 'Rao C.S',
+  quantity: 12,
+  year: 1993,
+  imageUrl: 'chemical\/img\/42.jpg'
+ },
+ {
+  'title': 'Basic Principles of Membrane Technology',
+  author: 'Mulder M',
+  quantity: 15,
+  year: 1996,
+  imageUrl: 'chemical\/img\/43.jpg'
+ },
+ {
+  'title': 'Membrane Separation Processes',
+  author: 'KaushikNath',
+  quantity: 19,
+  year: 2008,
+  imageUrl: 'chemical\/img\/44.jpg'
+ },
+ {
+  'title': 'Chemical Engineering Kinetics',
+  author: 'J. M. Smith',
+  quantity: 15,
+  year: 2006,
+  imageUrl: 'chemical\/img\/45.jpg'
+ },
+ {
+  'title': 'Elements of Chemical Reaction Engineering',
+  author: 'H. Scott Fogler',
+  quantity: 19,
+  year: 2011,
+  imageUrl: 'chemical\/img\/46.jpg'
+ },
+ {
+  'title': ' Bioprocess Engineering',
+  author: 'Michael L. Shuler ,FikretKargi',
+  quantity: 16,
+  year: 1998,
+  imageUrl: 'chemical\/img\/47.jpg'
+ },
+ {
+  'title': 'Fuel Cells: Principles and Applications',
+  author: 'B. Viswanathan and M. Aulice Scibioh',
+  quantity: 11,
+  year: 2008,
+  imageUrl: 'chemical\/img\/48.jpg'
+ },
+ {
+  'title': 'Material Science and Engineering',
+  author: 'William D. Callister Jr.',
+  quantity: 22,
+  year: 2007,
+  imageUrl: 'chemical\/img\/49.jpg'
+ },
+ {
+  'title': 'Modern Petroleum Refining Processes',
+  author: 'B. K. BhaskaraRao',
+  quantity: 13,
+  year: 2011,
+  imageUrl: 'chemical\/img\/50.jpg'
+ },
+ {
+  'title': 'Energy Technology',
+  author: 'S. Rao, B. B. Parulekar',
+  quantity: 24,
+  year: 1994,
+  imageUrl: 'chemical\/img\/51.jpg'
+ },
+ {
+  'title': 'Non-Conventional energy sources',
+  author: 'G. D. Rai',
+  quantity: 10,
+  year: 2017,
+  imageUrl: 'chemical\/img\/52.jpg'
+ },
+ {
+  'title': 'Fuels and Combustion',
+  author: 'S. Sarkar',
+  quantity: 13,
+  year: 2009,
+  imageUrl: 'chemical\/img\/53.jpg'
+ },
+ {
+  'title': 'Bioprocess Engineering: Basic Concepts',
+  author: 'M. L. Shuler and F. Kargi',
+  quantity: 11,
+  year: 2003,
+  imageUrl: 'chemical\/img\/54.jpg'
+ }
+]
+        // Add more book entries as needed
+
+      const bookList = document.getElementById('bookList');
+      const searchInput = document.getElementById('search');
+      // Function to filter books
+    function filterBooks() {
+      const query = searchInput.value.toLowerCase();
+      
+      const books = document.getElementsByClassName('book');
+      
+      // Filter books based on query
+      for (let i = 0; i < books.length; i++) {
+        const title = books[i].querySelector('h3').textContent; 
+        if (title.toLowerCase().indexOf(query) > -1) {
+          books[i].style.display = 'block';
+        } else {
+          books[i].style.display = 'none'; 
+        }
+      }
+    }
+    // Filter books on search input 
+    searchBtn.addEventListener("click", showSearchBar);
+    searchBar.addEventListener("click", showSearchBar); 
+    searchInput.addEventListener("keyup", filterBooks);
+    // Create book card
+    function createBookCard(book) {
+      // Code to create card...
+      return card; 
+    }
+      // Populate the book gallery using the provided data
+      booksData.forEach(book => {
+        const bookElement = document.createElement('div');
+        bookElement.classList.add('book');
+
+        const imageElement = document.createElement('img');
+        imageElement.src = book.imageUrl;
+        imageElement.alt = `${book.title} by ${book.author}`;
+
+        const infoElement = document.createElement('div');
+        infoElement.classList.add('book-info');
+        infoElement.innerHTML = `<h3>${book.title}</h3><p>${book.author}</p><p>Published: ${book.year}</p><p>Quantity: ${book.quantity}</p>`;
+
+        bookElement.appendChild(imageElement);
+        bookElement.appendChild(infoElement);
+
+        bookList.appendChild(bookElement);
+      });
+    });
+    // Animate search bar on focus/blur
+    const searchBtn = document.getElementById('search-btn');
+  const searchBar = document.getElementById('search-bar');
+
+  searchBtn.addEventListener('click', () => {
+    searchBar.style.display = 'block';
+    searchBar.classList.add('glow'); 
+  }); 
+  // Show search bar
+  function showSearchBar() {
+      searchBar.style.display = "block"; 
+    }
+
+    // Hide search bar
+    function hideSearchBar() {
+      searchBar.style.display = "none";
+    }
+    // Get book cards
+    const bookCards = document.querySelectorAll('.book');
+
+    // Extract data
+    extractBookData(bookCards, window.books);
+  </script>
+</body>
+</html>

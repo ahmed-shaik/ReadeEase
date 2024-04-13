@@ -1,0 +1,379 @@
+[
+ {
+  title: 'introduction of chemical engineering ',
+  author: 'S. K. Ghosal, S. K. Sanyal and S. Dutt “',
+  quantity: 15,
+  year: 2011,
+  imageUrl: '.\/img\/1.jpg'
+ },
+ {
+  'title': 'Elementary Chemical Engineering',
+  author: 'Max S. Peters',
+  quantity: 18,
+  year: 2009,
+  imageUrl: '.\/img\/2.jpg'
+ },
+ {
+  'title': 'Engineering Drawing',
+  author: 'N. D. Bhatt',
+  quantity: 22,
+  year: 2014,
+  imageUrl: '.\/img\/3.jpg'
+ },
+ {
+  'title': 'Engineering Graphics with Auto CAD',
+  author: 'R. B. Choudary',
+  quantity: 16,
+  year: 2015,
+  imageUrl: '.\/img\/4.jpg'
+ },
+ {
+  'title': 'Elements of Workshop Technology',
+  author: ' S.K.Hajra Choudhury ',
+  quantity: 21,
+  year: 2017,
+  imageUrl: '.\/img\/5.jpg'
+ },
+ {
+  'title': 'Engineering Ethics includes Human Values',
+  author: '. M.Govindarajan, S.Natarajananad, V.S.SenthilKumar',
+  quantity: 17,
+  year: 2009,
+  imageUrl: '.\/img\/6.jpg'
+ },
+ {
+  'title': 'Language and Life',
+  author: 'Oriental Black Swan',
+  quantity: 15,
+  year: 2018,
+  imageUrl: '.\/img\/7.jpg'
+ },
+ {
+  'title': 'Thermal Engineering',
+  author: 'R.S. Khurmi and J.K. Gupta',
+  quantity: 11,
+  year: 2018,
+  imageUrl: '.\/img\/8.jpg'
+ },
+ {
+  'title': 'Strength of Materials',
+  author: 'Dr. R.K. Bansal',
+  quantity: 10,
+  year: 2011,
+  imageUrl: '.\/img\/9.jpg'
+ },
+ {
+  'title': 'A Text Book of Engineering Thermodynamics',
+  author: 'R.K.Rajput',
+  quantity: 13,
+  year: 2007,
+  imageUrl: '.\/img\/10.jpg'
+ },
+ {
+  'title': 'Electronic Devices and Circuit Theory',
+  author: 'Robert L. Boyiestad, Louis Nashelsky',
+  quantity: 14,
+  year: 2015,
+  imageUrl: '.\/img\/11.jpg'
+ },
+ {
+  'title': 'Cengage Learning , Computer Science: A Structured Programming Approach Using C',
+  author: 'B. A. Forouzan and R. F. Gilberg “',
+  quantity: 23,
+  year: 2009,
+  imageUrl: '.\/img\/12.jpg'
+ },
+ {
+  'title': 'Problem solving and program Design in C',
+  author: 'Jeri R. Hanly , Elliot B .Koffman',
+  quantity: 25,
+  year: 2010,
+  imageUrl: '.\/img\/13.jpg'
+ },
+ {
+  'title': 'Perspertives of Environmental Studies',
+  author: 'Anubha Kaushik & C.P.Kaushik',
+  quantity: 18,
+  year: 2015,
+  imageUrl: '.\/img\/14.jpg'
+ },
+ {
+  'title': 'Advanced Engineering Mathematics',
+  author: 'Erwin Kreyszig,',
+  quantity: 20,
+  year: 2011,
+  imageUrl: '.\/img\/15.jpg'
+ },
+ {
+  'title': 'Organic Chemistry',
+  author: 'Arun Bahl & B.S.Bahl',
+  quantity: 16,
+  year: 2015,
+  imageUrl: '.\/img\/16.jpg'
+ },
+ {
+  'title': 'Cell Biology, Genetics, Molecular Biology, Evolution and Ecology',
+  author: 'Dr. P.S. Verma, Dr. V.K. Agarwal',
+  quantity: 9,
+  year: 2009,
+  imageUrl: '.\/img\/17.jpg'
+ },
+ {
+  'title': 'Fundamentals of biochemistry',
+  author: 'J.L.Jain, S.Jain And N.Jain',
+  quantity: 12,
+  year: 2000,
+  imageUrl: '.\/img\/18.jpg'
+ },
+ {
+  'title': 'Basic principles and Calculations in Chemical Engineering',
+  author: 'David M. Himmelblau',
+  quantity: 19,
+  year: 1995,
+  imageUrl: '.\/img\/19.jpg'
+ },
+ {
+  'title': 'Chemical Process Principles Part-I - Material and Energy balances',
+  author: 'Olaf A Hougen, K.M. Watson and R. A. Ragatz',
+  quantity: 7,
+  year: 1995,
+  imageUrl: '.\/img\/20.jpg'
+ },
+ {
+  'title': 'Unit Operations of Chemical Engineering',
+  author: 'W.L. McCabe, J.C. Smith and P.Harriot',
+  quantity: 16,
+  year: 2005,
+  imageUrl: '.\/img\/21.jpg'
+ },
+ {
+  'title': 'Chemical Engineering -Vol.2',
+  author: 'J.H.Coulson and J.F.Richardson',
+  quantity: 13,
+  year: 2002,
+  imageUrl: '.\/img\/22.jpg'
+ },
+ {
+  'title': 'Principles of Management',
+  author: 'P.C. Tripathi, P.N.Reddy',
+  quantity: 19,
+  year: 2008,
+  imageUrl: '.\/img\/23.jpg'
+ },
+ {
+  'title': 'Managerial Economics and Financial Analysis',
+  author: ' A.R. AryaSri',
+  quantity: 14,
+  year: 2013,
+  imageUrl: '.\/img\/24.jpg'
+ },
+ {
+  'title': 'Operation Research',
+  author: 'S.D. Sharma',
+  quantity: 15,
+  year: 2015,
+  imageUrl: '.\/img\/25.jpg'
+ },
+ {
+  'title': 'Introduction to Chemical Engineering Thermodynamics',
+  author: 'J. M. Smith, H. C. Van Ness and M. M. Abbott',
+  quantity: 24,
+  year: 2000,
+  imageUrl: '.\/img\/26.jpg'
+ },
+ {
+  'title': 'A Text Book of Fluid Mechanics and Hydraulic Machines',
+  author: 'R. K. Bansal',
+  quantity: 21,
+  year: 2008,
+  imageUrl: '.\/img\/27.jpg'
+ },
+ {
+  'title': 'Introductory Methods of Numerical Analysis',
+  author: 'Sastry, S. S',
+  quantity: 19,
+  year: 2012,
+  imageUrl: '.\/img\/28.jpg'
+ },
+ {
+  'title': 'Outlines of Polymer Technology: Manufacture of Polymers',
+  author: 'R. Sinha',
+  quantity: 22,
+  year: 2004,
+  imageUrl: '.\/img\/29.jpg'
+ },
+ {
+  'title': 'The Lean Startup',
+  author: 'Eric Ries',
+  quantity: 10,
+  year: 2011,
+  imageUrl: '.\/img\/30.jpg'
+ },
+ {
+  'title': 'Ignore Everybody – And 39 Other Keys To Creativity',
+  author: 'Hugh MacLeod',
+  quantity: 26,
+  year: 2009,
+  imageUrl: '.\/img\/31.jpg'
+ },
+ {
+  'title': 'Strategies for Creative Problem Solving',
+  author: 'H. Scott Fogler and Steven E. LeBlanc',
+  quantity: 11,
+  year: 1995,
+  imageUrl: '.\/img\/32.jpg'
+ },
+ {
+  'title': 'Dryden’s out lines of chemical Technology',
+  author: 'Gopala Rao, M. and Marshall Sitting',
+  quantity: 17,
+  year: 2005,
+  imageUrl: '.\/img\/33.jpg'
+ },
+ {
+  'title': 'Masstransfer operations',
+  author: 'Treybal R.E',
+  quantity: 10,
+  year: 1980,
+  imageUrl: '.\/img\/34.jpg'
+ },
+ {
+  'title': 'Chemical Process Safety (Fundamentals with Applications)',
+  author: 'D.A. Crowl and J.F. Louvar',
+  quantity: 24,
+  year: 2011,
+  imageUrl: '.\/img\/35.jpg'
+ },
+ {
+  'title': 'Hand book of Fertilizer Technology',
+  quantity: 13,
+  year: 2002,
+  imageUrl: '.\/img\/36.jpg'
+ },
+ {
+  'title': 'Lachman \/ Lieberman’s The Theory and Practice of Industrial Pharmacy',
+  author: 'Roop K. Khar, S. P. Vyas, Farhan J. Ahmad and Gaurav K. Jain',
+  quantity: 18,
+  year: 2013,
+  imageUrl: '.\/img\/37.jpg'
+ },
+ {
+  'title': 'Handbook of Batteries',
+  author: 'David Linden and Thomas B. Reddy',
+  quantity: 9,
+  year: 2002,
+  imageUrl: '.\/img\/38.jpg'
+ },
+ {
+  'title': 'Principles of Mass Transfer and Seperation Processes',
+  author: 'Binay.K. Dutta',
+  quantity: 17,
+  year: 2007,
+  imageUrl: '.\/img\/39.jpg'
+ },
+ {
+  'title': 'Chemical Reaction Engineering',
+  author: 'Levenspiel',
+  quantity: 29,
+  year: 2001,
+  imageUrl: '.\/img\/40.jpg'
+ },
+ {
+  'title': 'Process Systems Analysis and Control',
+  author: 'Donald R. Coughnowr, Steven E. LeBlanc',
+  quantity: 11,
+  year: 2013,
+  imageUrl: '.\/img\/41.jpg'
+ },
+ {
+  'title': 'Environmental Pollution Control Engineering',
+  author: 'Rao C.S',
+  quantity: 12,
+  year: 1993,
+  imageUrl: '.\/img\/42.jpg'
+ },
+ {
+  'title': 'Basic Principles of Membrane Technology',
+  author: 'Mulder M',
+  quantity: 15,
+  year: 1996,
+  imageUrl: '.\/img\/43.jpg'
+ },
+ {
+  'title': 'Membrane Separation Processes',
+  author: 'KaushikNath',
+  quantity: 19,
+  year: 2008,
+  imageUrl: '.\/img\/44.jpg'
+ },
+ {
+  'title': 'Chemical Engineering Kinetics',
+  author: 'J. M. Smith',
+  quantity: 15,
+  year: 2006,
+  imageUrl: '.\/img\/45.jpg'
+ },
+ {
+  'title': 'Elements of Chemical Reaction Engineering',
+  author: 'H. Scott Fogler',
+  quantity: 19,
+  year: 2011,
+  imageUrl: '.\/img\/46.jpg'
+ },
+ {
+  'title': ' Bioprocess Engineering',
+  author: 'Michael L. Shuler ,FikretKargi',
+  quantity: 16,
+  year: 1998,
+  imageUrl: '.\/img\/47.jpg'
+ },
+ {
+  'title': 'Fuel Cells: Principles and Applications',
+  author: 'B. Viswanathan and M. Aulice Scibioh',
+  quantity: 11,
+  year: 2008,
+  imageUrl: '.\/img\/48.jpg'
+ },
+ {
+  'title': 'Material Science and Engineering',
+  author: 'William D. Callister Jr.',
+  quantity: 22,
+  year: 2007,
+  imageUrl: '.\/img\/49.jpg'
+ },
+ {
+  'title': 'Modern Petroleum Refining Processes',
+  author: 'B. K. BhaskaraRao',
+  quantity: 13,
+  year: 2011,
+  imageUrl: '.\/img\/50.jpg'
+ },
+ {
+  'title': 'Energy Technology',
+  author: 'S. Rao, B. B. Parulekar',
+  quantity: 24,
+  year: 1994,
+  imageUrl: '.\/img\/51.jpg'
+ },
+ {
+  'title': 'Non-Conventional energy sources',
+  author: 'G. D. Rai',
+  quantity: 10,
+  year: 2017,
+  imageUrl: '.\/img\/52.jpg'
+ },
+ {
+  'title': 'Fuels and Combustion',
+  author: 'S. Sarkar',
+  quantity: 13,
+  year: 2009,
+  imageUrl: '.\/img\/53.jpg'
+ },
+ {
+  'title': 'Bioprocess Engineering: Basic Concepts',
+  author: 'M. L. Shuler and F. Kargi',
+  quantity: 11,
+  year: 2003,
+  imageUrl: '.\/img\/54.jpg'
+ }
+]
