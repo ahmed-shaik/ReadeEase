@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="s1.css">
+  <title>EEE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Electrical and Electronics Engineering</h1>
+    <div class="search">
+      <button id="search-btn" class="search-btn">
+        <i class="fa fa-search fa-2x"></i>
+      </button>
+  
+      <div id="search-bar" class="search-bar">
+        <input type="text" id="search" placeholder="Search books...">
+      </div>
+    </div>
+    <div id="bookList" class="book-list"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const booksData = [
+        { title: 'Higher Engineering Mathematics', author: 'B S Grewal', year: 2000, quantity: 46, imageUrl: './img/1.jpg' },
+        { title: 'Engineering Physics', author: 'R K Gaur', year: 2001, quantity: 9, imageUrl: './img/2.jpg' },
+        {title: 'Fundamental of Physics',
+            author: 'David Halliday',
+            year: 2001,
+            quantity: 9,
+            imageUrl: './img/3.jpg'
+        },
+        {
+          title: 'Modern Engineering Physics ',
+          author: 'A.S.Vasudeva',
+          year: 2001,
+          quantity: 7,
+          imageUrl: './img/4.jpg'
+        },
+ {
+  title: 'Engineering Chemistry',
+  author: 'P.C.Jain and M.Jain',
+  year: 1999,
+  quantity: 9,
+  imageUrl: './img/5.jpg'
+ },
+ {
+  title: 'Engineering Chemistry',
+  author: 'R Gopalan',
+  year: 1999,
+  quantity: 2,
+  imageUrl: './img/6.jpg'
+ },
+ {
+  title: 'Engineering Drawing & Graphics',
+  author: 'K Venugopal',
+  year: 1998,
+  quantity: 21,
+  imageUrl: './img/7.jpg'
+ },
+ {
+  title: 'Digital Logic and Computer Design',
+  author: 'M.Morris Mano',
+  year: 2001,
+  quantity: 9,
+  imageUrl: './img/8.jpg'
+ },
+ {
+  title: 'Micro Electronics',
+  author: 'Jacob Millman',
+  year: 1987,
+  quantity: 8,
+  imageUrl: './img/9.jpg'
+ },
+ {
+
+  title: 'Electronic Devices and Circuits',
+  author: 'Jacob Millman',
+  year: 1991,
+  quantity: 6,
+  imageUrl: './img/10.jpg'
+ },
+ {
+  title: 'Fundamental of Electrical Engineering',
+  author: 'Vincent Del Toro',
+  year: 2000,
+  quantity: 10,
+  imageUrl: './img/11.jpg'
+ },
+ {
+  title: 'Let us C',
+  author: 'Yashavant Kanetkar',
+  year: 1999,
+  quantity: 10,
+  imageUrl: './img/12.jpg'
+ },
+ {
+  title: 'The C programming language',
+  author: 'Brian W. Kernighan and Dennis M.Ritchie',
+  year: 2001,
+  quantity: 12,
+  imageUrl: './img/13.jpg'
+ },
+ {
+  title: 'Strength of Materials',
+  author: 'S. Ramamrutham & R.Narayanan',
+  year: 2000,
+  quantity: 10,
+  imageUrl: './img/14.jpg'
+ },
+ {
+  title: 'Engineering circuit analysis',
+  author: 'W. H. Haytjr & J. E. Kemmerly',
+  year: 2000,
+  quantity: 21,
+  imageUrl: './img/15.jpg'
+ },
+ {
+  title: 'Network analysis',
+  author: 'M. E. Vanvalkunberg',
+  year: 2000,
+  quantity: 19,
+  imageUrl: './img/16.jpg'
+ },
+ {
+  title: 'Pulse Digital & Switching Waveforms',
+  author: 'Jacob Millman & Herbert Taub',
+  year: 2000,
+  quantity: 10,
+  imageUrl: './img/17.jpg'
+ },
+ {
+  title: 'Microprocessors and Interfacing',
+  author: 'Douglas V Hall',
+  year: 1999,
+  quantity: 20,
+  imageUrl: './img/18.jpg'
+ },
+ {
+  title: 'Introduction to Microprocessors',
+  author: 'Aditya P Mathur',
+  year: 1989,
+  quantity: 13,
+  imageUrl: './img/19.jpg'
+ },
+ {
+  title: 'Programming in Ansi C',
+  author: 'E Balguruswamy',
+  year: 1989,
+  quantity: 10,
+  imageUrl: './img/20.jpg'
+ },
+ {
+  title: 'Electromagnetics ',
+  author: 'John D Kraus and Daniel A Fleisch',
+  year: 1999,
+  quantity: 8,
+  imageUrl: './img/21.jpg'
+ },
+ {
+  title: 'Computer Architecture Organization',
+  author: 'John P Hayes',
+  year: 1998,
+  quantity: 10,
+  imageUrl: './img/22.jpg'
+ },
+ {
+  title: 'Electrics Power Systems',
+  author: 'C.L.Wadhwa',
+  year: 2000,
+  quantity: 10,
+  imageUrl: './img/23.jpg'
+ },
+ {
+  title: 'Modern Control Engineering',
+  author: 'K.Ogata',
+  year: 2000,
+  quantity: 10,
+  imageUrl: './img/24.jpg'
+ },
+ {
+  title: 'Integrated Circuits',
+  author: 'K.R.Botkar',
+  year: 1996,
+  quantity: 10,
+  imageUrl: './img/25.jpg'
+ },
+ {
+  title: 'Materials Science ',
+  author: 'M.Arumugam',
+  year: 1987,
+  quantity: 5,
+  imageUrl: './img/26.jpg'
+ },
+ {
+  title: 'Power Electronics ',
+  author: 'M.D.Singh',
+  year: 1998,
+  quantity: 10,
+  imageUrl: './img/27.jpg'
+ },
+ {
+  title: 'Modern Power System Analysis',
+  author: 'I.J.Nagrath',
+  year: 1989,
+  quantity: 10,
+  imageUrl: './img/28.jpg'
+ },
+ {
+  title: 'Engineering Drawing ',
+  author: 'N D Bhatt',
+  year: 2000,
+  quantity: 21,
+  imageUrl: './img/29.jpg'
+ }
+
+        // Add more book entries as needed
+      ];
+
+      const bookList = document.getElementById('bookList');
+      const searchInput = document.getElementById('search');
+      // Function to filter books
+    function filterBooks() {
+      const query = searchInput.value.toLowerCase();
+      
+      const books = document.getElementsByClassName('book');
+      
+      // Filter books based on query
+      for (let i = 0; i < books.length; i++) {
+        const title = books[i].querySelector('h3').textContent; 
+        if (title.toLowerCase().indexOf(query) > -1) {
+          books[i].style.display = 'block';
+        } else {
+          books[i].style.display = 'none'; 
+        }
+      }
+    }
+    // Filter books on search input 
+    searchBtn.addEventListener("click", showSearchBar);
+    searchBar.addEventListener("click", showSearchBar); 
+    searchInput.addEventListener("keyup", filterBooks);
+    // Create book card
+    function createBookCard(book) {
+      // Code to create card...
+      return card; 
+    }
+
+      // Populate the book gallery using the provided data
+      booksData.forEach(book => {
+        const bookElement = document.createElement('div');
+        bookElement.classList.add('book');
+
+        const imageElement = document.createElement('img');
+        imageElement.src = book.imageUrl;
+        imageElement.alt = `${book.title} by ${book.author}`;
+
+        const infoElement = document.createElement('div');
+        infoElement.classList.add('book-info');
+        infoElement.innerHTML = `<h3>${book.title}</h3><p>${book.author}</p><p>Published: ${book.year}</p><p>Quantity: ${book.quantity}</p>`;
+
+        bookElement.appendChild(imageElement);
+        bookElement.appendChild(infoElement);
+
+        bookList.appendChild(bookElement);
+      });
+    });
+    // Animate search bar on focus/blur
+    const searchBtn = document.getElementById('search-btn');
+  const searchBar = document.getElementById('search-bar');
+
+  searchBtn.addEventListener('click', () => {
+    searchBar.style.display = 'block';
+    searchBar.classList.add('glow'); 
+  }); 
+  // Show search bar
+  function showSearchBar() {
+      searchBar.style.display = "block"; 
+    }
+
+    // Hide search bar
+    function hideSearchBar() {
+      searchBar.style.display = "none";
+    }
+
+  </script>
+</body>
+</html>
